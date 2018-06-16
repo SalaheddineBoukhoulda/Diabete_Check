@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorMain">#2b3d51</color>
+    <color name="colorSecondary">#009A99</color>
+    <color name="colorText">#606F75</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="LogoColor">#359eb5</color>
+    <color name="inputHintFontColor">#9b9fa0</color>
+    <color name="inputFontColor">#373a3a</color>
+
+    <color name="gradientColorOne">#43d8b9</color>
+    <color name="gradientColorTwo">#000084</color>
+</resources>

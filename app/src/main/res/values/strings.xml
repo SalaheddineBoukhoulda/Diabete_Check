@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">HealthAssistance</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="notifications">Notifications</string>
+    <string name="statistics">Statistics</string>
+    <string name="options">Options</string>
+    <string name="ketone">Ketone</string>
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+
+    <!--To Remove-->
+    <string name="profile_name">Salaheddine</string>
+    <string name="profile_description">This is the profile description</string>
+    <string name="first_item">firstItem</string>
+    <string name="second_item">secondItem</string>
+</resources>

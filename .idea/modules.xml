@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Diabete-Check-Finale.iml" filepath="$PROJECT_DIR$/Diabete-Check-Finale.iml" />
+      <module fileurl="file://C:\Users\Mr_Rude\Pictures\Diabete-Check-Finale\Diabete_Check.iml" filepath="C:\Users\Mr_Rude\Pictures\Diabete-Check-Finale\Diabete_Check.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
