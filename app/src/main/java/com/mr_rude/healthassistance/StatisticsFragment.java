@@ -28,6 +28,7 @@ public class StatisticsFragment extends Fragment {
     public StatisticsFragment(){
 
     }
+
     public ArrayList<StatisticsAnalyses> statisticsAnalyses = new ArrayList<>();
 
     @Nullable
@@ -43,6 +44,7 @@ public class StatisticsFragment extends Fragment {
 
 
     public void getDataFromDataBase(Context context){
+        statisticsAnalyses.clear();
         DataBaseHelper dataBaseHelper = new DataBaseHelper(context);
         SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
         String[] projection = {
