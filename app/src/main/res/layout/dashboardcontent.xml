@@ -89,7 +89,7 @@
                 android:gravity="center"
                 android:text="@string/ketone"
                 android:textColor="@android:color/white"
-                android:textSize="12sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/ketone_value"
@@ -98,7 +98,7 @@
                 android:layout_weight="0.2"
                 android:fontFamily="@font/roboto"
                 android:gravity="center"
-                android:text="10"
+                android:text="XX"
                 android:textColor="@android:color/white"
                 android:textSize="30sp" />
 
@@ -109,6 +109,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/day1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
@@ -116,17 +117,18 @@
                     android:gravity="center"
                     android:text="Day"
                     android:textColor="@android:color/white"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/date1"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:fontFamily="open_sans"
                     android:gravity="center_horizontal"
-                    android:text="28/04/2018"
+                    android:text="dd/mm/yyyy"
                     android:textColor="@android:color/white"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <ImageView
@@ -165,7 +167,7 @@
                 android:gravity="center"
                 android:text="@string/temperature"
                 android:textColor="@android:color/white"
-                android:textSize="12sp" />
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/temperature_value"
@@ -174,7 +176,7 @@
                 android:layout_weight="0.2"
                 android:fontFamily="@font/roboto"
                 android:gravity="center"
-                android:text="37°"
+                android:text="XX°"
                 android:textColor="@android:color/white"
                 android:textSize="30sp" />
 
@@ -185,6 +187,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/day2"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
@@ -192,17 +195,18 @@
                     android:gravity="center"
                     android:text="Day"
                     android:textColor="@android:color/white"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/date2"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:fontFamily="open_sans"
                     android:gravity="center_horizontal"
-                    android:text="28/04/2018"
+                    android:text="dd/mm/yyyy"
                     android:textColor="@android:color/white"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <ImageView
@@ -240,7 +244,7 @@
                 android:gravity="center"
                 android:text="@string/humidity"
                 android:textColor="@android:color/white"
-                android:textSize="12sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/humidity_value"
@@ -249,7 +253,7 @@
                 android:layout_weight="0.2"
                 android:fontFamily="@font/roboto"
                 android:gravity="center"
-                android:text="17%"
+                android:text="XX%"
                 android:textColor="@android:color/white"
                 android:textSize="30sp" />
 
@@ -260,6 +264,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/day3"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
@@ -267,17 +272,18 @@
                     android:gravity="center"
                     android:text="Day"
                     android:textColor="@android:color/white"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/date3"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5"
                     android:fontFamily="open_sans"
                     android:gravity="center_horizontal"
-                    android:text="28/04/2018"
+                    android:text="dd/mm/yyyy"
                     android:textColor="@android:color/white"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <ImageView

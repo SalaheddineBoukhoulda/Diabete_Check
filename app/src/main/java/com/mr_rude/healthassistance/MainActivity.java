@@ -1,6 +1,8 @@
 package com.mr_rude.healthassistance;
 
 import android.app.FragmentManager;
+import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,8 +13,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.mr_rude.healthassistance.Data.DataBaseHelper;
+import com.mr_rude.healthassistance.Data.DatabaseContract;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 
@@ -20,16 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private FlowingDrawer mDrawer;
-
+    public static int idObj; // id of the device
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Log.d(TAG, "onCreate: started");
-
 
         // We Initialize the fragments
         final DashboardFragment dashboardFragment = new DashboardFragment();
@@ -48,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
         MenuItem dashboardItem = (MenuItem) navigationView.getMenu().findItem(R.id.nav_dashboard);
         dashboardItem.setChecked(true);
+        //We get username from login intent
+        View headerView = navigationView.getHeaderView(0);
+        Intent intent = getIntent();
+        String username_raw = intent.getStringExtra("username");
+        String password_raw = intent.getStringExtra("password");
+        TextView userName = headerView.findViewById(R.id.firstname_header);
+        userName.setText(username_raw);
+        idObj = intent.getIntExtra("idobj",-1);
+
+
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override

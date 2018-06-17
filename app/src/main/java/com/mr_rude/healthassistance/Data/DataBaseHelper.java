@@ -42,17 +42,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 + DatabaseContract.HistoriqueEntry.KETONE + " INTEGER NOT NULL, "
                 + DatabaseContract.HistoriqueEntry.TEMPERATURE + " INTEGER NOT NULL, "
                 + DatabaseContract.HistoriqueEntry.HUMIDITY + " INTEGER NOT NULL, "
-                + DatabaseContract.HistoriqueEntry.DATE + " INTEGER NOT NULL, "
-                + DatabaseContract.HistoriqueEntry.TIME + " INTEGER);";
+                + DatabaseContract.HistoriqueEntry.DATE + " TEXT NOT NULL, "
+                + DatabaseContract.HistoriqueEntry.TIME + " TEXT NOT NULL);";
         db.execSQL(SQL_CREATE_HISTORIQUES_TABLE);
         //Create responsable table
         String SQL_CREATE_RESPONSABLE_TABLE = "CREATE TABLE " + DatabaseContract.ResponsableEntry.TABLE_NAME + "("
-                + DatabaseContract.HistoriqueEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + DatabaseContract.HistoriqueEntry.KETONE + " INTEGER NOT NULL, "
-                + DatabaseContract.HistoriqueEntry.TEMPERATURE + " INTEGER NOT NULL, "
-                + DatabaseContract.HistoriqueEntry.HUMIDITY + " INTEGER NOT NULL, "
-                + DatabaseContract.HistoriqueEntry.DATE + " DATE, "
-                + DatabaseContract.HistoriqueEntry.TIME + " DATETIME);";
+                + DatabaseContract.ResponsableEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + DatabaseContract.ResponsableEntry.USERNAME + " TEXT NOT NULL, "
+                + DatabaseContract.ResponsableEntry.PASSWORD + " TEXT NOT NULL, "
+                + DatabaseContract.ResponsableEntry.NUMBER + " INTEGER NOT NULL, "
+                + DatabaseContract.ResponsableEntry.IDOBJ + " INTEGER NOT NULL, "
+                + DatabaseContract.ResponsableEntry.ADRESS + " TEXT NOT NULL, "
+                + DatabaseContract.ResponsableEntry.DOCNAME + " TEXT NOT NULL);";
         db.execSQL(SQL_CREATE_RESPONSABLE_TABLE);
     }
 

@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,12 +34,15 @@ public class SignIn extends AppCompatActivity {
     public static final int CONNECTION_TIMEOUT=10000;
     public static final int READ_TIMEOUT=15000;
 
+    private EditText userName;
+    private EditText password;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        final EditText userName = (EditText) findViewById(R.id.login_username);
-        final EditText password = (EditText) findViewById(R.id.login_password);
+        userName = (EditText) findViewById(R.id.login_username);
+        password = (EditText) findViewById(R.id.login_password);
         final TextView loginButton = findViewById(R.id.login);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,17 +146,25 @@ public class SignIn extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-
+            int idobj = -1;
             //this method will be running on UI thread
+            try {
+                idobj = Integer.parseInt(result);
+            } catch (NumberFormatException e) {
+                Log.i("",e.getStackTrace().toString());
+            }
 
-
-            if(result.equalsIgnoreCase("true"))
+            if(idobj >= 0)
             {
                 /* Here launching another activity when login successful. If you persist login state
                 use sharedPreferences of Android. and logout button to clear sharedPreferences.
                  */
 
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                i.putExtra("username",userName.getText().toString());
+                i.putExtra("password",password.getText().toString());
+                i.putExtra("idobj",idobj);
+                Log.d("TEST", "onPostExecute: " + idobj);
                 startActivity(i);
                 finish();
 
