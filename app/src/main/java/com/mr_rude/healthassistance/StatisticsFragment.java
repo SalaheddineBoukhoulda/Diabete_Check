@@ -10,10 +10,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.mr_rude.healthassistance.Data.DataBaseHelper;
 import com.mr_rude.healthassistance.Data.DatabaseContract;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -25,20 +28,16 @@ public class StatisticsFragment extends Fragment {
     public StatisticsFragment(){
 
     }
-    public ArrayList<String> ketones = new ArrayList<>();
-    public ArrayList<String> temperatures = new ArrayList<>();
-    public ArrayList<String> humidities = new ArrayList<>();
-    public ArrayList<String> days = new ArrayList<>();
-    public ArrayList<String> dates = new ArrayList<>();
-
+    public ArrayList<StatisticsAnalyses> statisticsAnalyses = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragmentcontent,container,false);
-        TextView txt = (TextView) rootView.findViewById(R.id.frame_text);
-        txt.setText("Statistics");
+        View rootView = inflater.inflate(R.layout.statisticscontent,container,false);
         getDataFromDataBase(rootView.getContext());
+        StatisticAdapter statisticAdapter = new StatisticAdapter(rootView.getContext(),statisticsAnalyses);
+        ListView listView = (ListView) rootView.findViewById(R.id.list_view_statistics);
+        listView.setAdapter(statisticAdapter);
         return rootView;
     }
 
@@ -56,11 +55,13 @@ public class StatisticsFragment extends Fragment {
         };
         Cursor cursor = db.query(DatabaseContract.HistoriqueEntry.TABLE_NAME,projection,null,null,null,null,null,null);
         while (cursor.moveToNext()){
-            ketones.add(cursor.getString(1));
-            temperatures.add(cursor.getString(2));
-            humidities.add(cursor.getString(3));
-            days.add(cursor.getString(4));
-            dates.add(cursor.getString(5));
+            statisticsAnalyses.add(new StatisticsAnalyses(
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4),
+                    cursor.getString(5)
+                    ));
         }
     }
 }

@@ -55,7 +55,7 @@ public class NotificationFragment extends Fragment {
         int[] to = {R.id.listview_image, R.id.listview_item_title, R.id.listview_item_short_description};
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(rootView.getContext(), aList, R.layout.notification_list_view, from, to);
-        ListView androidListView = (ListView) rootView.findViewById(R.id.list_view);
+        ListView androidListView = (ListView) rootView.findViewById(R.id.list_view_notifications);
         androidListView.setAdapter(simpleAdapter);
         return rootView;
     }

@@ -14,8 +14,8 @@
             android:title="@string/statistics"
             android:icon="@drawable/ic_data_usage_black_24dp"/>
         <item
-            android:id="@+id/nav_Options"
-            android:title="@string/options"
-            android:icon="@drawable/ic_settings_black_24dp"/>
+            android:id="@+id/nav_Credits"
+            android:icon="@drawable/ic_child_care_black_24dp"
+            android:title="@string/credits" />
     </group>
 </menu>

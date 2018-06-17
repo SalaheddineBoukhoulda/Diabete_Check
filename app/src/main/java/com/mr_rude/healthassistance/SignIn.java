@@ -164,7 +164,6 @@ public class SignIn extends AppCompatActivity {
                 i.putExtra("username",userName.getText().toString());
                 i.putExtra("password",password.getText().toString());
                 i.putExtra("idobj",idobj);
-                Log.d("TEST", "onPostExecute: " + idobj);
                 startActivity(i);
                 finish();
 

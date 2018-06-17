@@ -19,9 +19,7 @@ public class OptionsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragmentcontent,container,false);
-        TextView txt = (TextView) rootView.findViewById(R.id.frame_text);
-        txt.setText("Settings");
+        View rootView = inflater.inflate(R.layout.optioncontent,container,false);
         return rootView;
     }
 }

@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                                 fragmentManager.beginTransaction().replace(R.id.main_content,statisticsFragment).commit();
                                 Log.d(TAG, "onNavigationItemSelected: Statistics");
                                 break;
-                            case R.id.nav_Options:
+                            case R.id.nav_Credits:
                                 fragmentManager.beginTransaction().replace(R.id.main_content,optionsFragment).commit();
                                 Log.d(TAG, "onNavigationItemSelected: Options");
                                 break;
