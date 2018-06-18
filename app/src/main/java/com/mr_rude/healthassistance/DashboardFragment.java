@@ -2,6 +2,7 @@ package com.mr_rude.healthassistance;
 
 import android.app.Fragment;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -49,6 +50,10 @@ public class DashboardFragment extends Fragment {
     public static final int CONNECTION_TIMEOUT=10000;
     public static final int READ_TIMEOUT=15000;
 
+    private Context context;
+    public String results[] = new String[5];
+    private boolean results_null = true;
+
     public TextView keton;
     public TextView temperature;
     public TextView humidity;
@@ -68,6 +73,7 @@ public class DashboardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.dashboardcontent,container,false);
+        context = rootView.getContext();
 
         keton = rootView.findViewById(R.id.ketone_value);
         temperature = rootView.findViewById(R.id.temperature_value);
@@ -79,6 +85,17 @@ public class DashboardFragment extends Fragment {
         date2 = rootView.findViewById(R.id.date2);
         date3 = rootView.findViewById(R.id.date3);
 
+        if(!results_null){
+            keton.setText(results[0]);
+            temperature.setText(results[1] + "°");
+            humidity.setText(results[2] + "%");
+            day1.setText(results[3]);
+            day2.setText(results[3]);
+            day3.setText(results[3]);
+            date1.setText(results[4]);
+            date2.setText(results[4]);
+            date3.setText(results[4]);
+        }
 
         AHBottomNavigation bottomNavigation = rootView.findViewById(R.id.bottom_navigation);
         AHBottomNavigationItem item1 = new AHBottomNavigationItem("Message", R.drawable.ic_email, R.color.LogoColor);
@@ -143,7 +160,7 @@ public class DashboardFragment extends Fragment {
             try {
 
                 // Enter URL address where your php file resides
-                url = new URL("http://10.0.2.2/test_android/analyse.php");
+                url = new URL("http://192.168.1.3/test_android/analyse.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block
@@ -227,7 +244,7 @@ public class DashboardFragment extends Fragment {
                 Toast.makeText(getContext(), "OOPs! Something went wrong. Connection Problem.", Toast.LENGTH_LONG).show();
 
             }else{
-                String[] results = result.split(",");
+                results = result.split(",");
                 keton.setText(results[0]);
                 temperature.setText(results[1] + "°");
                 humidity.setText(results[2] + "%");
@@ -237,8 +254,9 @@ public class DashboardFragment extends Fragment {
                 date1.setText(results[4]);
                 date2.setText(results[4]);
                 date3.setText(results[4]);
+                results_null = false;
 
-                DataBaseHelper dataBaseHelper = new DataBaseHelper(getContext());
+                DataBaseHelper dataBaseHelper = new DataBaseHelper(context);
                 SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
                 //Insert record into database
                 ContentValues contentValues = new ContentValues();
