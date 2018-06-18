@@ -160,7 +160,7 @@ public class DashboardFragment extends Fragment {
             try {
 
                 // Enter URL address where your php file resides
-                url = new URL("http://192.168.1.3/test_android/analyse.php");
+                url = new URL("http://10.0.2.2/test_android/analyse.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block

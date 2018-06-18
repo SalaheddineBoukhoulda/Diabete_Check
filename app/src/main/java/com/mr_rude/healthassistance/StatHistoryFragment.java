@@ -20,8 +20,8 @@ import java.util.ArrayList;
  * Created by Mr_Rude on 24/04/2018.
  */
 
-public class StatisticsFragment extends Fragment {
-    public StatisticsFragment(){
+public class StatHistoryFragment extends Fragment {
+    public StatHistoryFragment(){
 
     }
 
