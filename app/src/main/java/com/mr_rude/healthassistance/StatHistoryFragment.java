@@ -6,17 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.mr_rude.healthassistance.Data.DataBaseHelper;
 import com.mr_rude.healthassistance.Data.DatabaseContract;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -34,7 +30,7 @@ public class StatisticsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.statisticscontent,container,false);
+        View rootView = inflater.inflate(R.layout.statisticshistorique,container,false);
         getDataFromDataBase(rootView.getContext());
         StatisticAdapter statisticAdapter = new StatisticAdapter(rootView.getContext(),statisticsAnalyses);
         ListView listView = (ListView) rootView.findViewById(R.id.list_view_statistics);
