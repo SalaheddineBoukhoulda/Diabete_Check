@@ -258,8 +258,30 @@ public class DashboardFragment extends Fragment {
 
                 DataBaseHelper dataBaseHelper = new DataBaseHelper(context);
                 SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
-                //Insert record into database
                 ContentValues contentValues = new ContentValues();
+                String[] projection = {
+                        DatabaseContract.HistoriqueEntry._ID,
+                        DatabaseContract.HistoriqueEntry.KETONE,
+                        DatabaseContract.HistoriqueEntry.TEMPERATURE,
+                        DatabaseContract.HistoriqueEntry.HUMIDITY,
+                        DatabaseContract.HistoriqueEntry.DATE,
+                        DatabaseContract.HistoriqueEntry.TIME
+                };
+
+                String selection = DatabaseContract.HistoriqueEntry.DATE + " = ? AND " + DatabaseContract.HistoriqueEntry.TIME + " = ?";
+                String selectionArgs[] = {results[3],results[4]};
+
+                Cursor cursor = db.query(
+                        DatabaseContract.HistoriqueEntry.TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null,
+                        null,
+                        null
+                );
+                if(!cursor.moveToNext())
+                //Insert record into database
                 contentValues.put(DatabaseContract.HistoriqueEntry.KETONE,results[0]);
                 contentValues.put(DatabaseContract.HistoriqueEntry.TEMPERATURE,results[1]);
                 contentValues.put(DatabaseContract.HistoriqueEntry.HUMIDITY,results[2]);
