@@ -67,4 +67,4 @@ Goto-> History
 
 ## License
 
-No license included
+apache-2.0
