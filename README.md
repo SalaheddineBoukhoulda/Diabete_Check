@@ -20,25 +20,38 @@ use the account we gave you with subscripton then :
 
 ### #1- Getting the results:
 Goto->Dashboard->Analyse:
-![](images/drawer.PNG)
-![](images/analyse.PNG)
+
+<p align="center">
+  <img  src="images/drawer.PNG">
+</p>
+<p align="center">
+  <img  src="images/analyse.PNG">
+</p>
 
 ### #2- Contacting your doctor:
 Goto->Dashboard->Call/Message:
-![](images/call.PNG)
 
+<p align="center">
+  <img  src="images/call.PNG">
+</p>
 ### #3- Getting notifications:
 Goto-> Notification:
-![](images/notification.PNG)
 
+<p align="center">
+  <img  src="images/notifcation.PNG">
+</p>
 ### #4- Visualising your statistics:
 Goto-> Statistics:
-![](images/chart.PNG)
 
+<p align="center">
+  <img  src="images/chart.PNG">
+</p>
 ### #5- Results History:
 Goto-> History
-![](images/history.PNG)
 
+<p align="center">
+  <img  src="images/history.PNG">
+</p>
 ## Built With
 
 * [Andoid](https://developer.android.com/studio/) - Using Android studio
