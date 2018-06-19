@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         final DashboardFragment dashboardFragment = new DashboardFragment();
         final NotificationFragment notificationFragment = new NotificationFragment();
         final StatisticsFragment statisticsFragment = new StatisticsFragment();
+        final HistoryFragment historyFragment = new HistoryFragment();
         final OptionsFragment optionsFragment = new OptionsFragment();
 
         //Set the Dashboardfragment as the starting one
@@ -69,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case R.id.nav_statistics:
                                 fragmentManager.beginTransaction().replace(R.id.main_content,statisticsFragment).commit();
+                                Log.d(TAG, "onNavigationItemSelected: Statistics");
+                                break;
+                            case R.id.nav_history:
+                                fragmentManager.beginTransaction().replace(R.id.main_content,historyFragment).commit();
                                 Log.d(TAG, "onNavigationItemSelected: Statistics");
                                 break;
                             case R.id.nav_Credits:

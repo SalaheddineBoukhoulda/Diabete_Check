@@ -20,12 +20,12 @@ import java.util.ArrayList;
  * Created by Mr_Rude on 24/04/2018.
  */
 
-public class StatHistoryFragment extends Fragment {
-    public StatHistoryFragment(){
+public class HistoryFragment extends Fragment {
+    public HistoryFragment(){
 
     }
 
-    public ArrayList<StatisticsAnalyses> statisticsAnalyses = new ArrayList<>();
+    private ArrayList<StatisticsAnalyses> statisticsAnalyses = new ArrayList<>();
 
     @Nullable
     @Override
@@ -61,5 +61,6 @@ public class StatHistoryFragment extends Fragment {
                     cursor.getString(5)
                     ));
         }
+        db.close();
     }
 }

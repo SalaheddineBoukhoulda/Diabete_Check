@@ -243,7 +243,7 @@ public class DashboardFragment extends Fragment {
 
                 Toast.makeText(getContext(), "OOPs! Something went wrong. Connection Problem.", Toast.LENGTH_LONG).show();
 
-            }else{
+            }else {
                 results = result.split(",");
                 keton.setText(results[0]);
                 temperature.setText(results[1] + "°");
@@ -269,7 +269,7 @@ public class DashboardFragment extends Fragment {
                 };
 
                 String selection = DatabaseContract.HistoriqueEntry.DATE + " = ? AND " + DatabaseContract.HistoriqueEntry.TIME + " = ?";
-                String selectionArgs[] = {results[3],results[4]};
+                String selectionArgs[] = {results[3], results[4]};
 
                 Cursor cursor = db.query(
                         DatabaseContract.HistoriqueEntry.TABLE_NAME,
@@ -280,14 +280,16 @@ public class DashboardFragment extends Fragment {
                         null,
                         null
                 );
-                if(!cursor.moveToNext())
-                //Insert record into database
-                contentValues.put(DatabaseContract.HistoriqueEntry.KETONE,results[0]);
-                contentValues.put(DatabaseContract.HistoriqueEntry.TEMPERATURE,results[1]);
-                contentValues.put(DatabaseContract.HistoriqueEntry.HUMIDITY,results[2]);
-                contentValues.put(DatabaseContract.HistoriqueEntry.DATE,results[3]);
-                contentValues.put(DatabaseContract.HistoriqueEntry.TIME,results[4]);
-                long rows = db.insert(DatabaseContract.HistoriqueEntry.TABLE_NAME,null,contentValues);
+                if (!cursor.moveToNext()) {
+                    //Insert record into database
+                    contentValues.put(DatabaseContract.HistoriqueEntry.KETONE, results[0]);
+                    contentValues.put(DatabaseContract.HistoriqueEntry.TEMPERATURE, results[1]);
+                    contentValues.put(DatabaseContract.HistoriqueEntry.HUMIDITY, results[2]);
+                    contentValues.put(DatabaseContract.HistoriqueEntry.DATE, results[3]);
+                    contentValues.put(DatabaseContract.HistoriqueEntry.TIME, results[4]);
+                    long rows = db.insert(DatabaseContract.HistoriqueEntry.TABLE_NAME, null, contentValues);
+                }
+                db.close();
             }
         }
 
