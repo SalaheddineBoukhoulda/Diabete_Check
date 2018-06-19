@@ -21,7 +21,7 @@ use the account we gave you with subscripton then :
 ### 1- Getting the results:
 Goto->Dashboard->Analyse:
 
-<p align="center" display="inline" >
+<p align="center" display="inline" width="100px" >
   <img  src="images/drawer.PNG">
 </p>
 <p align="center" display="inline">
@@ -34,24 +34,28 @@ Goto->Dashboard->Call/Message:
 <p align="center">
   <img  src="images/call.PNG">
 </p>
+
 ### 3- Getting notifications:
 Goto-> Notification:
 
 <p align="center" >
   <img  src="images/notifcation.PNG">
 </p>
+
 ### 4- Visualising your statistics:
 Goto-> Statistics:
 
 <p align="center">
   <img  src="images/chart.PNG">
 </p>
+
 ### 5- Results History:
 Goto-> History
 
 <p align="center">
   <img  src="images/history.PNG">
 </p>
+
 ## Built With
 
 * [Andoid](https://developer.android.com/studio/) - Using Android studio
