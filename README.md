@@ -20,24 +20,24 @@ use the account we gave you with subscripton then :
 
 ### #1- Getting the results:
 Goto->Dashboard->Analyse:
-![](images/drawer.png)
-![](images/analyse.png)
+![](images/drawer.PNG)
+![](images/analyse.PNG)
 
 ### #2- Contacting your doctor:
 Goto->Dashboard->Call/Message:
-![](images/call.png)
+![](images/call.PNG)
 
 ### #3- Getting notifications:
 Goto-> Notification:
-![](images/notification.png)
+![](images/notification.PNG)
 
 ### #4- Visualising your statistics:
 Goto-> Statistics:
-![](images/chart.png)
+![](images/chart.PNG)
 
 ### #5- Results History:
 Goto-> History
-![](images/history.png)
+![](images/history.PNG)
 
 ## Built With
 
