@@ -18,35 +18,35 @@ use the device we gave you with subscription, the sensor of the device must reta
 ### Checking the results (Software)
 use the account we gave you with subscripton then :
 
-### #1- Getting the results:
+### 1- Getting the results:
 Goto->Dashboard->Analyse:
 
-<p align="center">
+<p align="center" display="inline" >
   <img  src="images/drawer.PNG">
 </p>
-<p align="center">
+<p align="center" display="inline">
   <img  src="images/analyse.PNG">
 </p>
 
-### #2- Contacting your doctor:
+### 2- Contacting your doctor:
 Goto->Dashboard->Call/Message:
 
 <p align="center">
   <img  src="images/call.PNG">
 </p>
-### #3- Getting notifications:
+### 3- Getting notifications:
 Goto-> Notification:
 
-<p align="center">
+<p align="center" >
   <img  src="images/notifcation.PNG">
 </p>
-### #4- Visualising your statistics:
+### 4- Visualising your statistics:
 Goto-> Statistics:
 
 <p align="center">
   <img  src="images/chart.PNG">
 </p>
-### #5- Results History:
+### 5- Results History:
 Goto-> History
 
 <p align="center">
