@@ -5,7 +5,7 @@ The app will help following the child's condition using both hardware and softwa
 
 ## Getting Started
 
-In order to start you need to register with us so we can give you t, so for that contact me on : Diabete_Check@gmail.com, so we can study your case.
+In order to start you need to register with us, so for that contact me on : Diabete_Check@gmail.com, so we can study your case.
 and provide you with the device and the account.
 Once the account provided just LOGIN.
 
