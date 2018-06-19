@@ -21,7 +21,7 @@ use the account we gave you with subscripton then :
 ### 1- Getting the results:
 Goto->Dashboard->Analyse:
 
-<p align="center" display="inline" width="100px" >
+<p align="center" display="inline" >
   <img  src="images/drawer.PNG">
 </p>
 <p align="center" display="inline">
