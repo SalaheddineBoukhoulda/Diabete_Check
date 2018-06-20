@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -17,6 +18,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +39,8 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Mr_Rude on 24/04/2018.
@@ -64,6 +68,16 @@ public class DashboardFragment extends Fragment {
     public TextView date2;
     public TextView date3;
 
+    public TextView stateText;
+    CircleImageView stateImage;
+
+    ImageView ketoneArrow;
+    ImageView tempArrow;
+    ImageView humidityArrow;
+
+    private float lastKetone;
+    private float lastTemp;
+    private float lastHumidity;
 
 
     public DashboardFragment(){
@@ -72,7 +86,7 @@ public class DashboardFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.dashboardcontent,container,false);
+        final View rootView = inflater.inflate(R.layout.dashboardcontent, container, false);
         context = rootView.getContext();
 
         keton = rootView.findViewById(R.id.ketone_value);
@@ -85,7 +99,20 @@ public class DashboardFragment extends Fragment {
         date2 = rootView.findViewById(R.id.date2);
         date3 = rootView.findViewById(R.id.date3);
 
-        if(!results_null){
+        ketoneArrow = rootView.findViewById(R.id.ketoneArrow);
+        tempArrow = rootView.findViewById(R.id.tempArrow);
+        humidityArrow = rootView.findViewById(R.id.humidityArrow);
+
+        ketoneArrow.setVisibility(View.INVISIBLE);
+        tempArrow.setVisibility(View.INVISIBLE);
+        humidityArrow.setVisibility(View.INVISIBLE);
+
+        stateText = rootView.findViewById(R.id.stateText);
+        stateText.setText("");
+        stateImage = rootView.findViewById(R.id.stateImage);
+        stateImage.setVisibility(View.INVISIBLE);
+
+        if (!results_null) {
             keton.setText(results[0]);
             temperature.setText(results[1] + "°");
             humidity.setText(results[2] + "%");
@@ -95,7 +122,9 @@ public class DashboardFragment extends Fragment {
             date1.setText(results[4]);
             date2.setText(results[4]);
             date3.setText(results[4]);
+            setState();
         }
+
 
         AHBottomNavigation bottomNavigation = rootView.findViewById(R.id.bottom_navigation);
         AHBottomNavigationItem item1 = new AHBottomNavigationItem("Message", R.drawable.ic_email, R.color.LogoColor);
@@ -142,6 +171,49 @@ public class DashboardFragment extends Fragment {
         return rootView;
     }
 
+
+    public void setState(){
+        try {
+            boolean badState = false;
+            String rawStateText = "";
+            if(Float.parseFloat(results[0])>= 7){
+                rawStateText = "Critically High Ketone";
+                badState = true;
+            }else if(Float.parseFloat(results[0])>=3) {
+                rawStateText = "High ketone insuline required   ";
+                badState = true;
+            }
+            if(Float.parseFloat(results[1])<= 35.8f){
+                badState = true;
+                if (rawStateText.isEmpty()) {
+                    rawStateText = "Low temperature";
+                }else {
+                    rawStateText += "\n" + "Low temperature";
+                }
+            }else if(Integer.parseInt(results[1])>= 38.1){
+                badState = true;
+                if (rawStateText.isEmpty()) {
+                    rawStateText = "High temperature";
+                }else {
+                    rawStateText += "\n" + "High temperature";
+                }
+            }
+            if(badState){
+                stateText.setTextColor(Color.RED);
+                stateText.setText(rawStateText);
+                stateImage.setImageResource(R.drawable.bad_state);
+                stateImage.setVisibility(View.VISIBLE);
+            }else {
+                stateText.setTextColor(Color.GREEN);
+                stateText.setText("Good");
+                stateImage.setImageResource(R.drawable.good_state);
+                stateImage.setVisibility(View.VISIBLE);
+            }
+
+        } catch (Exception e) {
+            Log.d("Dashboard", "onCreateView: ParsingError");
+        }
+    }
 
     private class AsyncLogin extends AsyncTask<String, String, String>
     {
@@ -254,8 +326,43 @@ public class DashboardFragment extends Fragment {
                 date1.setText(results[4]);
                 date2.setText(results[4]);
                 date3.setText(results[4]);
-                results_null = false;
+                try {
+                    if(!results_null){
+                        if(lastKetone < Float.parseFloat(results[0])){
+                            ketoneArrow.setImageResource(R.drawable.ic_arrow_upward_black_24dp);
+                        }else if (lastKetone > Float.parseFloat(results[0])){
+                            ketoneArrow.setImageResource(R.drawable.ic_arrow_downward_black_24dp);
+                        }else {
+                            ketoneArrow.setImageResource(R.drawable.ic_drag_handle_black_24dp);
+                        }
 
+                        if(lastTemp < Float.parseFloat(results[1])){
+                            tempArrow.setImageResource(R.drawable.ic_arrow_upward_black_24dp);
+                        }else if (lastTemp > Float.parseFloat(results[1])){
+                            tempArrow.setImageResource(R.drawable.ic_arrow_downward_black_24dp);
+                        }else {
+                            tempArrow.setImageResource(R.drawable.ic_drag_handle_black_24dp);
+                        }
+
+                        if(lastHumidity < Float.parseFloat(results[2])){
+                            humidityArrow.setImageResource(R.drawable.ic_arrow_upward_black_24dp);
+                        }else if (lastHumidity > Float.parseFloat(results[2])){
+                            humidityArrow.setImageResource(R.drawable.ic_arrow_downward_black_24dp);
+                        }else {
+                            humidityArrow.setImageResource(R.drawable.ic_drag_handle_black_24dp);
+                        }
+                        ketoneArrow.setVisibility(View.VISIBLE);
+                        tempArrow.setVisibility(View.VISIBLE);
+                        humidityArrow.setVisibility(View.VISIBLE);
+                    }
+                    lastKetone = Float.parseFloat(results[0]);
+                    lastTemp = Float.parseFloat(results[1]);
+                    lastHumidity = Float.parseFloat(results[2]);
+                }catch (Exception e){
+                    Log.d("Dashboard", "onPostExecute: ParseError");
+                }
+                results_null = false;
+                setState();
                 DataBaseHelper dataBaseHelper = new DataBaseHelper(context);
                 SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
                 ContentValues contentValues = new ContentValues();

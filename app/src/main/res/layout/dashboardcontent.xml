@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.051" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
+        android:id="@+id/stateImage"
         android:layout_width="118dp"
         android:layout_height="81dp"
         android:layout_marginEnd="8dp"
@@ -132,11 +132,12 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/ketoneArrow"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_weight="0.2"
-                android:src="@drawable/refresh_icon"
+                android:src="@drawable/ic_arrow_upward_black_24dp"
                 android:textColor="@color/colorMain" />
 
         </LinearLayout>
@@ -210,11 +211,12 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/tempArrow"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_weight="0.2"
-                android:src="@drawable/refresh_icon"
+                android:src="@drawable/ic_arrow_upward_black_24dp"
                 android:textColor="@color/colorMain" />
 
         </LinearLayout>
@@ -287,11 +289,12 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/humidityArrow"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_weight="0.2"
-                android:src="@drawable/refresh_icon"
+                android:src="@drawable/ic_arrow_downward_black_24dp"
                 android:textColor="@color/colorMain" />
 
         </LinearLayout>
@@ -300,18 +303,19 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/stateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/open_sans"
         android:text="Good"
+        android:textAlignment="center"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/stateImage" />
 
     <!--<LinearLayout-->
         <!--android:layout_width="match_parent"-->
