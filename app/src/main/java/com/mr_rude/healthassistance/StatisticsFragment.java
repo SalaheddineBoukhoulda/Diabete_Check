@@ -62,7 +62,7 @@ public class StatisticsFragment extends Fragment {
                             Float.parseFloat(analyse.getHumidity())));
                 }
 
-                Line keton_line = new Line(keton_values).setColor(Color.CYAN).setFilled(true).setHasLabels(true);
+                Line keton_line = new Line(keton_values).setColor(Color.parseColor("#4FC3F7")).setFilled(true).setHasLabels(true);
                 List<Line> keton_lines = new ArrayList<Line>();
                 keton_lines.add(keton_line);
 
@@ -70,7 +70,7 @@ public class StatisticsFragment extends Fragment {
                 keton_data.setLines(keton_lines);
                 keton_chart.setLineChartData(keton_data);
 
-                Line temperature_line = new Line(temperature_values).setColor(Color.GREEN).setFilled(true).setHasLabels(true);
+                Line temperature_line = new Line(temperature_values).setColor(Color.parseColor("#29B6F6")).setFilled(true).setHasLabels(true);
                 List<Line> temperature_lines = new ArrayList<Line>();
                 temperature_lines.add(temperature_line);
 
@@ -78,7 +78,7 @@ public class StatisticsFragment extends Fragment {
                 temperature_data.setLines(temperature_lines);
                 temperature_chart.setLineChartData(temperature_data);
 
-                Line humidity_line = new Line(humidity_values).setColor(Color.YELLOW).setFilled(true).setHasLabels(true);
+                Line humidity_line = new Line(humidity_values).setColor(Color.parseColor("#03A9F4")).setFilled(true).setHasLabels(true);
                 List<Line> humidity_lines = new ArrayList<Line>();
                 humidity_lines.add(humidity_line);
 
@@ -90,15 +90,6 @@ public class StatisticsFragment extends Fragment {
             Log.d("Statistic Chart", "onCreateView: ParseError");
         }
 
-//        //In most cased you can call data model methods in builder-pattern-like manner.
-//        Line line = new Line(values).setColor(Color.CYAN).setFilled(true);
-//        List<Line> lines = new ArrayList<Line>();
-//        lines.add(line);
-//
-//        LineChartData data = new LineChartData();
-//        data.setLines(lines);
-//
-//        chart.setLineChartData(data);
         return rootView;
     }
 
