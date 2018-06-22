@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HealthAssistance</string>
+    <string name="app_name">DiabeteCheck</string>
     <string name="dashboard">Dashboard</string>
     <string name="notifications">Notifications</string>
     <string name="statistics">Statistics</string>

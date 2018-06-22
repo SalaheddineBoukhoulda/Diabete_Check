@@ -109,20 +109,22 @@ public class StatisticsFragment extends Fragment {
         SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
         String[] projection = {
                 DatabaseContract.HistoriqueEntry._ID,
+                DatabaseContract.HistoriqueEntry.ID_OBJ,
                 DatabaseContract.HistoriqueEntry.KETONE,
                 DatabaseContract.HistoriqueEntry.TEMPERATURE,
                 DatabaseContract.HistoriqueEntry.HUMIDITY,
                 DatabaseContract.HistoriqueEntry.DATE,
                 DatabaseContract.HistoriqueEntry.TIME
         };
-        Cursor cursor = db.query(DatabaseContract.HistoriqueEntry.TABLE_NAME,projection,null,null,null,null,null,null);
-        while (cursor.moveToNext()){
+        String selection = DatabaseContract.HistoriqueEntry.ID_OBJ + " = ?";
+        String selectionArgs[] = {""+MainActivity.idObj};
+        Cursor cursor = db.query(DatabaseContract.HistoriqueEntry.TABLE_NAME,projection,selection,selectionArgs,null,null,null,null);        while (cursor.moveToNext()){
             statisticsAnalyses.add(new StatisticsAnalyses(
-                    cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3),
                     cursor.getString(4),
-                    cursor.getString(5)
+                    cursor.getString(5),
+                    cursor.getString(6)
             ));
         }
         db.close();

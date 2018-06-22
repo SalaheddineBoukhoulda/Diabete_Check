@@ -32,6 +32,7 @@ public final class DatabaseContract {
         public final static String TABLE_NAME = "historique";
 
         public final static String _ID = BaseColumns._ID;
+        public final static String ID_OBJ = "idobj";
         public final static String KETONE = "ketone";
         public final static String TEMPERATURE = "temperature";
         public final static String HUMIDITY = "humidity";

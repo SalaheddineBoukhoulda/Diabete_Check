@@ -368,6 +368,7 @@ public class DashboardFragment extends Fragment {
                 ContentValues contentValues = new ContentValues();
                 String[] projection = {
                         DatabaseContract.HistoriqueEntry._ID,
+                        DatabaseContract.HistoriqueEntry.ID_OBJ,
                         DatabaseContract.HistoriqueEntry.KETONE,
                         DatabaseContract.HistoriqueEntry.TEMPERATURE,
                         DatabaseContract.HistoriqueEntry.HUMIDITY,
@@ -389,6 +390,7 @@ public class DashboardFragment extends Fragment {
                 );
                 if (!cursor.moveToNext()) {
                     //Insert record into database
+                    contentValues.put(DatabaseContract.HistoriqueEntry.ID_OBJ, ""+MainActivity.idObj);
                     contentValues.put(DatabaseContract.HistoriqueEntry.KETONE, results[0]);
                     contentValues.put(DatabaseContract.HistoriqueEntry.TEMPERATURE, results[1]);
                     contentValues.put(DatabaseContract.HistoriqueEntry.HUMIDITY, results[2]);
