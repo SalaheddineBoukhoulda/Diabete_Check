@@ -23,50 +23,50 @@ Use the account we gave you with subscripton then :
 It's the first screen you meet once you get in the app:
 
 <p align="center" display="inline" >
-  <img  src="images/login.PNG" width="250" height="450">
+  <img  src="images/login.PNG" width="250" height="500">
 </p>
 
 ### 1-Drawer-Options
 Once logged-in, drag from left to write in any point of the screen to open the drawer.
 
 <p align="center" display="inline" >
-    <img  src="images/drawer.PNG" width="250" height="450">
+    <img  src="images/drawer.PNG" width="250" height="500">
 </p>
 
 ### 2- Getting the results:
 Goto->Dashboard->Analyse:
 
 <p float="left" align="center">
-    <img  src="images/analyse.PNG" width="250" height="450"/>
-    <img  src="images/analyse2.PNG" width="250" height="450"/>
+    <img  src="images/analyse.PNG" width="250" height="500"/>
+    <img  src="images/analyse2.PNG" width="250" height="500"/>
 </p>
 
 ### 3- Contacting your doctor:
 Goto->Dashboard->Call/Message:
 
 <p align="center" display="inline" >
-    <img  src="images/call.PNG" width="250" height="450">
+    <img  src="images/call.PNG" width="250" height="500">
 </p>
 
 ### 4- Getting notifications:
 Goto-> Notification:
 
 <p align="center" display="inline" >
-    <img  src="images/notifcation.PNG" width="250" height="450">
+    <img  src="images/notifcation.PNG" width="250" height="500">
 </p>
 
 ### 5- Visualising your statistics: "Results/Days"
 Goto-> Statistics:
 
 <p align="center" display="inline" >
-    <img  src="images/chart.PNG" width="250" height="450">
+    <img  src="images/chart.PNG" width="250" height="500">
 </p>
 
 ### 6- Results History:
 Goto-> History
 
 <p align="center" display="inline" >
-    <img  src="images/history.PNG" width="250" height="450">
+    <img  src="images/history.PNG" width="250" height="500">
 </p>
 
 ## Built With
