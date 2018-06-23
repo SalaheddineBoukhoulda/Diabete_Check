@@ -13,47 +13,60 @@ Once the account provided just LOGIN.
 
 ### Ketone,Temperature,Humidity Tests (Hardware)
 
-use the device we gave you with subscription, the sensor of the device must retain in the child's mouth for at least 10 seconds so that the results will be precise, once u hear the bip it means that the data have been gathered you can remove the sensor.
+Use the device we gave you with subscription, the sensor of the device must retain in the child's mouth for at least 10 seconds so that the results will be precise, once u hear the bip it means that the data have been gathered you can remove the sensor.
 
 ### Checking the results (Software)
-use the account we gave you with subscripton then :
+Use the account we gave you with subscripton then :
 
-### 1- Getting the results:
-Goto->Dashboard->Analyse:
+
+### 0- Log-in:
+It's the first screen you meet once you get in the app:
 
 <p align="center" display="inline" >
-  <img  src="images/drawer.PNG">
-</p>
-<p align="center" display="inline">
-  <img  src="images/analyse.PNG">
+  <img  src="images/login.PNG" width="250" height="450">
 </p>
 
-### 2- Contacting your doctor:
+### 1-Drawer-Options
+Once logged-in, drag from left to write in any point of the screen to open the drawer.
+
+<p align="center" display="inline" >
+    <img  src="images/drawer.PNG" width="250" height="450">
+</p>
+
+### 2- Getting the results:
+Goto->Dashboard->Analyse:
+
+<p float="left" align="center">
+    <img  src="images/analyse.PNG" width="250" height="450"/>
+    <img  src="images/analyse2.PNG" width="250" height="450"/>
+</p>
+
+### 3- Contacting your doctor:
 Goto->Dashboard->Call/Message:
 
-<p align="center">
-  <img  src="images/call.PNG">
+<p align="center" display="inline" >
+    <img  src="images/call.PNG" width="250" height="450">
 </p>
 
-### 3- Getting notifications:
+### 4- Getting notifications:
 Goto-> Notification:
 
-<p align="center" >
-  <img  src="images/notifcation.PNG">
+<p align="center" display="inline" >
+    <img  src="images/notifcation.PNG" width="250" height="450">
 </p>
 
-### 4- Visualising your statistics:
+### 5- Visualising your statistics: "Results/Days"
 Goto-> Statistics:
 
-<p align="center">
-  <img  src="images/chart.PNG">
+<p align="center" display="inline" >
+    <img  src="images/chart.PNG" width="250" height="450">
 </p>
 
-### 5- Results History:
+### 6- Results History:
 Goto-> History
 
-<p align="center">
-  <img  src="images/history.PNG">
+<p align="center" display="inline" >
+    <img  src="images/history.PNG" width="250" height="450">
 </p>
 
 ## Built With
@@ -63,7 +76,7 @@ Goto-> History
 
 ## Authors
 
-* **Boukhoulda Salaheddine** - *Initial work* - [SalaheddineDz](https://github.com/SalaheddineDz)
+* **Boukhoulda Salaheddine** - [SalaheddineDz](https://github.com/SalaheddineDz)
 
 ## License
 
